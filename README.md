@@ -12,12 +12,16 @@ Luckily, it's easy to switch them via SysEx. That's what `load_unosyp.rb` script
 handle_extension() {
   ...
         unosyp)
-            ~/load_unosyp.rb "${FILE_PATH}" 2>&1 && exit 5
+            ~/load_unosyp.rb "${FILE_PATH}" 2>&1
+            exit 0 # https://github.com/ranger/ranger/issues/2719
             ;;
 ```
 
 `load_unosyp.rb` requires `brew install gbevin/tools/sendmidi ruby` and contains hardcoded `/opt/homebrew` paths
 
-## Take control
+SEQ & ARP settings do not get loaded yet.
+
+## Controls
 
 - https://patchstorage.com/uno-synth-pro-envelopes-control-length-scaling/
+
